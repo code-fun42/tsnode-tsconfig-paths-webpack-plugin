@@ -23,7 +23,7 @@ const config: WebpackConfig = {
 		extensions: [".ts", ".js"],
 
 		alias: {
-			// "@components": path.resolve(__dirname, "src", "components")
+			"@components": path.resolve(__dirname, "src", "components"),
 		},
 
 		modules: [path.resolve(__dirname, 'node_modules')],
