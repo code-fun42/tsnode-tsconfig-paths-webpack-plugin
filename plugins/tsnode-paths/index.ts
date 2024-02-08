@@ -1,7 +1,7 @@
 import path from "node:path";
 import fs from "node:fs";
 
-import {Compiler, Resolver} from "webpack";
+import {Resolver} from "webpack";
 import {TsnodeTsconfigPathsWebpackPluginOptions} from "./interfaces";
 
 export default class TsnodeTsconfigPathsWebpackPlugin {
@@ -13,9 +13,12 @@ export default class TsnodeTsconfigPathsWebpackPlugin {
 
 	apply(resolver: Resolver) {
 		resolver.hooks.resolve.tapAsync("TsnodeTsconfigPathsWebpackPlugin", (resolveRequest, resolveContext, callback) => {
+			console.log("resolve");
+			callback();
 		});
 
 		resolver.hooks.noResolve.tap("TsnodeTsconfigPathsWebpackPlugin", (resolveRequest, err) => {
+			console.log("noResolve");
 		});
 	}
 };
