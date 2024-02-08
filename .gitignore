@@ -3,5 +3,7 @@
 node_modules
 .DS_Store
 
+/dist
+
 # Yarn
 .yarn/install-state.gz
